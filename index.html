@@ -1,1 +1,670 @@
-# Love
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Muskan Naimuddin Shaikh ❤️</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    :root {
+      --maroon-deep: #1a0106;
+      --maroon-rich: #3b0510;
+      --maroon-card: #540d1e;
+      --maroon-gold: #f4c472;
+      --paper-bg: #fff8f5;
+      --text-maroon: #5a091a;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at center, #450916 0%, #29030c 55%, #150105 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Georgia', serif;
+      overflow: hidden;
+      padding: 16px;
+      color: #fff;
+    }
+
+    /* Ambient floating stars and hearts */
+    .ambient-fx {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .fx-item {
+      position: absolute;
+      bottom: -8%;
+      animation: driftUp 9s linear infinite;
+      opacity: 0;
+      filter: drop-shadow(0 0 6px rgba(244, 196, 114, 0.6));
+    }
+    @keyframes driftUp {
+      0% { transform: translateY(0) scale(0.6) rotate(0deg); opacity: 0; }
+      20% { opacity: 0.85; }
+      80% { opacity: 0.85; }
+      100% { transform: translateY(-115vh) scale(1.2) rotate(40deg); opacity: 0; }
+    }
+
+    /* Sparkle Burst from envelope */
+    .sparkle-burst {
+      position: fixed;
+      pointer-events: none;
+      z-index: 60;
+    }
+    .magic-spark {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ffd700;
+      box-shadow: 0 0 10px #ffb300, 0 0 20px #ff3366;
+      animation: explode 1.2s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+    }
+    @keyframes explode {
+      0% { transform: translate(0, 0) scale(1); opacity: 1; }
+      100% { transform: translate(var(--dx), var(--dy)) scale(0); opacity: 0; }
+    }
+
+    /* Main Container */
+    .scene {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .magic-text {
+      font-size: 1.05rem;
+      font-weight: 600;
+      text-align: center;
+      min-height: 48px;
+      margin-bottom: 25px;
+      color: var(--maroon-gold);
+      text-shadow: 0 0 12px rgba(244, 196, 114, 0.4);
+      transition: all 0.6s ease;
+      line-height: 1.4;
+      padding: 0 10px;
+    }
+
+    /* Envelope styling */
+    .envelope-box {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      background: #4a0614;
+      border-radius: 0 0 14px 14px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(120, 10, 30, 0.3);
+      cursor: pointer;
+      perspective: 1200px;
+      transition: transform 0.3s ease;
+    }
+    .envelope-box:hover {
+      transform: translateY(-4px);
+    }
+    .envelope-box.wiggle {
+      animation: magicWiggle 0.8s ease-in-out;
+    }
+    @keyframes magicWiggle {
+      0%, 100% { transform: rotate(0deg) scale(1); }
+      20% { transform: rotate(-5deg) scale(1.04); }
+      40% { transform: rotate(5deg) scale(1.08); }
+      60% { transform: rotate(-4deg) scale(1.06); }
+      80% { transform: rotate(3deg) scale(1.02); }
+    }
+
+    .envelope-flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 150px solid transparent;
+      border-right: 150px solid transparent;
+      border-top: 120px solid #5a091a;
+      transform-origin: top center;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 5;
+    }
+    .envelope-front-left {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-left: 150px solid #430512;
+      border-top: 100px solid transparent;
+      border-bottom: 100px solid #430512;
+      z-index: 3;
+    }
+    .envelope-front-right {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      border-right: 150px solid #38030e;
+      border-top: 100px solid transparent;
+      border-bottom: 100px solid #38030e;
+      z-index: 3;
+    }
+    .envelope-front-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-left: 150px solid transparent;
+      border-right: 150px solid transparent;
+      border-bottom: 115px solid #4c0715;
+      border-radius: 0 0 14px 14px;
+      z-index: 4;
+    }
+
+    .seal-btn {
+      position: absolute;
+      top: 96px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 52px;
+      height: 52px;
+      background: radial-gradient(circle, #fde28e, #d4982c, #8a5700);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5), 0 0 15px rgba(244, 196, 114, 0.6);
+      z-index: 6;
+      transition: all 0.4s ease;
+    }
+    .envelope-box.opened .envelope-flap {
+      transform: rotateX(180deg);
+      z-index: 1;
+    }
+    .envelope-box.opened .seal-btn {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(1.6);
+    }
+
+    /* Modal Wrappers */
+    .overlay-modal {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+      background: rgba(12, 1, 4, 0.88);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .overlay-modal.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Step 2: Scratch Card (Maroon Luxury Box) */
+    .scratch-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 340px;
+      height: 420px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(145deg, #420612, #200208);
+      box-shadow: 0 25px 70px rgba(0,0,0,0.85), inset 0 0 0 2px rgba(244, 196, 114, 0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 24px;
+      cursor: pointer;
+    }
+
+    .revealed-teaser {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      animation: glowPulse 2.5s infinite alternate ease-in-out;
+    }
+    @keyframes glowPulse {
+      0% { transform: scale(0.98); filter: drop-shadow(0 0 10px rgba(244, 196, 114, 0.2)); }
+      100% { transform: scale(1.02); filter: drop-shadow(0 0 22px rgba(244, 196, 114, 0.5)); }
+    }
+
+    .teaser-sub {
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #e096a6;
+      font-weight: 500;
+    }
+    .teaser-name {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.3;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+      font-family: 'Georgia', serif;
+    }
+    .teaser-tag {
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--maroon-gold);
+      margin-top: -4px;
+    }
+    .teaser-btn {
+      margin-top: 24px;
+      background: linear-gradient(135deg, #f4c472, #cf8f2b);
+      color: #3b0510;
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 12px 24px;
+      border-radius: 999px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 15px rgba(244, 196, 114, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .scratch-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      cursor: grab;
+      touch-action: none;
+      transition: opacity 0.8s ease;
+    }
+
+    .scratch-hint-text {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 12;
+      pointer-events: none;
+      color: #f7d59c;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+      white-space: nowrap;
+      transition: opacity 0.4s;
+    }
+
+    /* Step 3: Expanded Light-Themed Love Letter */
+    .letter-paper {
+      position: relative;
+      width: 100%;
+      max-width: 370px;
+      background: var(--paper-bg);
+      border-radius: 20px;
+      padding: 26px 22px;
+      color: #3a0610;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.8), 0 0 0 1px rgba(244, 196, 114, 0.5);
+      border: 3px double #e8b0b8;
+      max-height: 88vh;
+      overflow-y: auto;
+      transform: scale(0.9);
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .overlay-modal.visible .letter-paper {
+      transform: scale(1);
+    }
+
+    .letter-header {
+      border-bottom: 2px dashed #f0c3cb;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+      font-size: 0.9rem;
+    }
+    .letter-header strong {
+      color: #6d0a1f;
+    }
+    .letter-header .tag-recipient {
+      color: #a81c3a;
+      font-weight: 700;
+    }
+
+    .letter-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-maroon);
+      margin-bottom: 10px;
+      font-family: 'Georgia', serif;
+    }
+
+    .letter-body {
+      font-size: 0.94rem;
+      line-height: 1.6;
+      color: #44111a;
+    }
+    .letter-body p {
+      margin-bottom: 12px;
+    }
+
+    .letter-body .hug-points {
+      list-style: none;
+      margin: 14px 0;
+      padding-left: 4px;
+    }
+    .letter-body .hug-points li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 24px;
+    }
+    .letter-body .hug-points li::before {
+      content: "💖";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      font-size: 0.85rem;
+    }
+
+    .stamp-approved {
+      display: inline-block;
+      border: 2px solid #b71c1c;
+      color: #b71c1c;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding: 2px 10px;
+      font-size: 0.82rem;
+      letter-spacing: 1px;
+      border-radius: 4px;
+      transform: rotate(-3deg);
+      margin-left: 4px;
+    }
+
+    .letter-signoff {
+      margin-top: 18px;
+      text-align: right;
+      border-top: 1px solid #f6d5db;
+      padding-top: 12px;
+    }
+    .letter-signoff .by {
+      font-size: 0.88rem;
+      color: #7a1529;
+    }
+    .letter-signoff .name {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #8c0d25;
+      font-family: 'Georgia', serif;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Ambience -->
+  <div class="ambient-fx" id="ambientFx"></div>
+
+  <!-- Step 1: Envelope Stage -->
+  <div class="scene" id="sceneEnvelope">
+    <div class="magic-text" id="statusText">💌 Tap the envelope to unlock magic...</div>
+    <div class="envelope-box" id="envelope">
+      <div class="envelope-flap"></div>
+      <div class="seal-btn">👑</div>
+      <div class="envelope-front-left"></div>
+      <div class="envelope-front-right"></div>
+      <div class="envelope-front-bottom"></div>
+    </div>
+  </div>
+
+  <!-- Step 2: Scratch Card Stage Modal -->
+  <div class="overlay-modal" id="scratchModal">
+    <div class="scratch-wrapper" id="scratchContainer">
+      <div class="revealed-teaser">
+        <span class="teaser-sub">Specially For</span>
+        <h2 class="teaser-name">To Muskan Naimuddin Shaikh</h2>
+        <span class="teaser-tag">My Love ❤️</span>
+        <div class="teaser-btn">
+          <span>💌 Tap to read letter</span>
+        </div>
+      </div>
+      <canvas id="scratchCanvas" class="scratch-canvas"></canvas>
+      <div class="scratch-hint-text" id="scratchHint">✨ Scratch gently to reveal ✨</div>
+    </div>
+  </div>
+
+  <!-- Step 3: Full Love Letter Modal -->
+  <div class="overlay-modal" id="letterModal">
+    <div class="letter-paper">
+      <div class="letter-header">
+        <p><strong>To:</strong> <span class="tag-recipient">Meri Jaan, Muskan Naimuddin Shaikh ❤️</span></p>
+        <p><strong>Subject:</strong> Urgent Application: Lifetime Hugs & Soft Kisses</p>
+      </div>
+
+      <h3 class="letter-title">Meri Pyaari Muskan,</h3>
+
+      <div class="letter-body">
+        <p>Yeh application directly mere dil ke emergency department se aayi hai. Sach yeh hai ki mere arms aapke bina bilkul adhoore hain, aur I am truly thirsty for your soft, sweet kisses.</p>
+
+        <ul class="hug-points">
+          <li><strong>Super Tight Hug:</strong> Jisme saari duniya bhool kar bas tumhari khushboo aur heartbeat ko hamesha ke liye mehsoos kar saku.</li>
+          <li><strong>Long, Sweet Kisses:</strong> On your soft lips—jo meri har bechaini aur thakan ko ek pal mein mita dein.</li>
+        </ul>
+
+        <p>Ab tumhare bina ek pal bhi intezaar nahi hota. Please bas jaldi se mere paas aa jao, application spot par hi <span class="stamp-approved">Approved</span> maani jaayegi!</p>
+      </div>
+
+      <div class="letter-signoff">
+        <p class="by">Sirf Aur Sirf Tumhara,</p>
+        <p class="name">Naimuddin ❤️</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 1. Continuous Floating Particles
+    const fxContainer = document.getElementById('ambientFx');
+    const symbols = ['❤️', '✨', '💖', '⭐', '🌸'];
+    for (let i = 0; i < 22; i++) {
+      const el = document.createElement('div');
+      el.className = 'fx-item';
+      el.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+      el.style.left = Math.random() * 98 + 'vw';
+      el.style.animationDelay = (Math.random() * 8) + 's';
+      el.style.animationDuration = (7 + Math.random() * 6) + 's';
+      el.style.fontSize = (14 + Math.random() * 16) + 'px';
+      fxContainer.appendChild(el);
+    }
+
+    // 2. Magical Envelope Opening with Sparkles
+    const envelope = document.getElementById('envelope');
+    const statusText = document.getElementById('statusText');
+    const scratchModal = document.getElementById('scratchModal');
+
+    function triggerSparkleBurst(x, y) {
+      const container = document.createElement('div');
+      container.className = 'sparkle-burst';
+      container.style.left = x + 'px';
+      container.style.top = y + 'px';
+      document.body.appendChild(container);
+
+      for (let i = 0; i < 36; i++) {
+        const spark = document.createElement('div');
+        spark.className = 'magic-spark';
+        const angle = (Math.PI * 2 / 36) * i;
+        const dist = 60 + Math.random() * 110;
+        spark.style.setProperty('--dx', `${Math.cos(angle) * dist}px`);
+        spark.style.setProperty('--dy', `${Math.sin(angle) * dist}px`);
+        spark.style.background = ['#ffd700', '#ff4d6d', '#ffffff', '#f4c472'][Math.floor(Math.random() * 4)];
+        container.appendChild(spark);
+      }
+      setTimeout(() => container.remove(), 1300);
+    }
+
+    envelope.addEventListener('click', (e) => {
+      if (envelope.classList.contains('opened')) return;
+
+      const rect = envelope.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      // Animate envelope wiggle & sparkles
+      envelope.classList.add('wiggle');
+      triggerSparkleBurst(centerX, centerY);
+
+      // Change text with magical glow
+      statusText.style.opacity = '0';
+      setTimeout(() => {
+        statusText.innerHTML = "✨ A letter from Naim to the most beautiful girl in the world ✨";
+        statusText.style.color = "#ffd700";
+        statusText.style.fontSize = "1.1rem";
+        statusText.style.opacity = '1';
+        envelope.classList.add('opened');
+      }, 450);
+
+      // Transition to Scratch Card
+      setTimeout(() => {
+        scratchModal.classList.add('visible');
+        initScratchCard();
+      }, 1800);
+    });
+
+    // 3. Scratch Card with 30% Auto-Clear
+    let scratchInitialized = false;
+    function initScratchCard() {
+      if (scratchInitialized) return;
+      scratchInitialized = true;
+
+      const canvas = document.getElementById('scratchCanvas');
+      const ctx = canvas.getContext('2d');
+      const container = document.getElementById('scratchContainer');
+      const hint = document.getElementById('scratchHint');
+
+      canvas.width = container.clientWidth;
+      canvas.height = container.clientHeight;
+
+      // Create rich Dark Maroon Metallic Scratch Layer
+      const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      grad.addColorStop(0, '#660b1e');
+      grad.addColorStop(0.5, '#3d0510');
+      grad.addColorStop(1, '#7a1127');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Golden foil decorative border on the scratch foil
+      ctx.strokeStyle = 'rgba(244, 196, 114, 0.45)';
+      ctx.lineWidth = 4;
+      ctx.strokeRect(14, 14, canvas.width - 28, canvas.height - 28);
+
+      // Scratch foil label
+      ctx.fillStyle = '#fce4ec';
+      ctx.font = '600 15px -apple-system, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('Scratch Here, Meri Jaan 💌', canvas.width / 2, canvas.height / 2);
+
+      let isDrawing = false;
+      let totalPixels = canvas.width * canvas.height;
+      let autoCleared = false;
+
+      function checkProgress() {
+        if (autoCleared) return;
+        // Sample 1 out of every 16 pixels for fast, smooth performance
+        const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const data = imgData.data;
+        let transparentCount = 0;
+        const totalSampled = data.length / 16;
+
+        for (let i = 3; i < data.length; i += 16) {
+          if (data[i] === 0) {
+            transparentCount++;
+          }
+        }
+
+        const clearedRatio = transparentCount / totalSampled;
+
+        // Auto scratch all at 30%
+        if (clearedRatio >= 0.30) {
+          autoCleared = true;
+          canvas.style.transition = 'opacity 0.6s ease';
+          canvas.style.opacity = '0';
+          hint.style.opacity = '0';
+
+          const rect = canvas.getBoundingClientRect();
+          triggerSparkleBurst(rect.left + rect.width / 2, rect.top + rect.height / 2);
+
+          setTimeout(() => {
+            canvas.remove();
+            hint.remove();
+          }, 650);
+        }
+      }
+
+      function scratch(e) {
+        if (!isDrawing || autoCleared) return;
+        const rect = canvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        const x = clientX - rect.left;
+        const y = clientY - rect.top;
+
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.beginPath();
+        ctx.arc(x, y, 32, 0, Math.PI * 2);
+        ctx.fill();
+
+        hint.style.opacity = '0';
+      }
+
+      canvas.addEventListener('mousedown', () => isDrawing = true);
+      window.addEventListener('mouseup', () => {
+        if (isDrawing) {
+          isDrawing = false;
+          checkProgress();
+        }
+      });
+      canvas.addEventListener('mousemove', (e) => {
+        scratch(e);
+        if (Math.random() < 0.2) checkProgress();
+      });
+
+      canvas.addEventListener('touchstart', (e) => {
+        isDrawing = true;
+        scratch(e);
+      }, { passive: true });
+      window.addEventListener('touchend', () => {
+        if (isDrawing) {
+          isDrawing = false;
+          checkProgress();
+        }
+      });
+      canvas.addEventListener('touchmove', (e) => {
+        scratch(e);
+        if (Math.random() < 0.25) checkProgress();
+      }, { passive: true });
+    }
+
+    // 4. Tap the revealed card to open letter
+    const scratchContainer = document.getElementById('scratchContainer');
+    const letterModal = document.getElementById('letterModal');
+
+    scratchContainer.addEventListener('click', () => {
+      // Only open letter if scratch overlay has completed
+      if (!document.getElementById('scratchCanvas')) {
+        scratchModal.classList.remove('visible');
+        setTimeout(() => {
+          letterModal.classList.add('visible');
+        }, 300);
+      }
+    });
+  </script>
+</body>
+</html>
